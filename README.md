@@ -8,7 +8,7 @@ All parameters your may need to change are in the top lines of src/main/Main.jav
 
 To train Neural-BoN on an unlabeled corpus, you can just specify the corpus in the Main function of src/main/Main.java and run it. This will generate the learned n-gram representations in the results folder.
 
-To train Neural-BoN on a labeled corpus, you can specify the corpus and implement an getXXXDataset function in src/myUtils/Dataset.java our change the getIMDBDataset function in src/myUtils/Dataset.java for the specific format.
+To train Neural-BoN on a labeled corpus, you can specify the corpus and implement an getXXXDataset function in src/myUtils/Dataset.java or change the getIMDBDataset function in src/myUtils/Dataset.java for the specific format.
 
 ## More Information
 
