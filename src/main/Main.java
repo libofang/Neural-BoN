@@ -6,27 +6,27 @@ import model.Model;
 import myUtils.*;
 import myUtils.Dictionary;
 
-
 public class Main {
 	// all the parameters are here
 	public static int ngram = 1;
 	public static float lr = 0.025f; // learning rate //0.1 89.93420.0
 	public static float rr = 0.000f; // regulize rate //not used
-	public static int negSize = 5; //negative sampling size
-	public static int iter = 10; //iteration
-	public static int batchSize = 100; 
-	public static int ws = 5; //CGNR window size
-	public static int n = 500; //word embeddings dimension
-	public static String info = "l"; // w, d or l // w stands for CGNR. d stands for TGNR. l stands for LGNR.
+	public static int negSize = 5; // negative sampling size
+	public static int iter = 10; // iteration
+	public static int batchSize = 100;
+	public static int ws = 5; // CGNR window size
+	public static int n = 500; // word embeddings dimension
+	public static String info = "l"; // w, d or l // w stands for CGNR. d stands
+										// for TGNR. l stands for LGNR.
 	public static boolean useUniqueWordList = false;
 	public static String negType = "i"; // i or o. negative sampling type
 	public static boolean preLogistic = false;
 	public static boolean saveWordVectors = true;
-	public static double subSampleRate = 0; 
-	public static double dropRate = 0; 
-	public static String addDataType = ""; // news4 
-	public static double subRate = 1; 
-	public static double pow = 1; 
+	public static double subSampleRate = 0;
+	public static double dropRate = 0;
+	public static String addDataType = ""; // news4
+	public static double subRate = 1;
+	public static double pow = 1;
 	public static int testId = new Random().nextInt(10000);
 
 	public static class DatasetTask {
@@ -55,15 +55,14 @@ public class Main {
 			// train model
 			model.train();
 
-
 			{
 				long startTime = System.currentTimeMillis();
 
 				// save model
-				String baseTmpSaveFolder = "./results/" + task.folderName + ngram + "/" + info + "_" + addDataType + "_" + n
-						+ "_r" + testId + "/";
+				String baseTmpSaveFolder = "./results/" + task.folderName + ngram + "/" + info + "_" + addDataType
+						+ "_" + n + "_r" + testId + "/";
 				String tmpSaveFolder = baseTmpSaveFolder + "fold" + index_task + "/";
-				if(saveWordVectors)
+				if (saveWordVectors)
 					model.saveWordVectors(tmpSaveFolder);
 
 				System.out.println("||" + "|" + "time:" + (System.currentTimeMillis() - startTime));
@@ -75,12 +74,23 @@ public class Main {
 	}
 
 	public static void main(String args[]) {
-		
-		 {
-			 List<DatasetTask> taskList = new ArrayList<DatasetTask>();
-			 taskList.add(new DatasetTask("books.txt", "unlabel"));
-			 //taskList.add(new DatasetTask("imdb.txt", "imdb"));
-			 train(taskList);
-		 }	
+
+		{
+			List<DatasetTask> taskList = new ArrayList<DatasetTask>();
+			/**
+			 * choose one of following line to add a task.
+			 * 
+			 * "unlabel" indicate unlabeled corpus and suitable only for CGNR
+			 * and TGNR.
+			 * 
+			 * "imdb" indicate imdb format. You can implement an getXXXDataset function
+			 * in src/myUtils/Dataset.java our change the getIMDBDataset
+			 * function in src/myUtils/Dataset.java for the specific format.
+			 */
+			// taskList.add(new DatasetTask("books.txt", "unlabel"));
+			// taskList.add(new DatasetTask("imdb.txt", "imdb"));
+
+			train(taskList);
+		}
 	}
 }

@@ -39,7 +39,7 @@ public class Dataset {
 		}
 		return d;
 	}
-	
+
 	private List<Text> getImdbDataset(String filePath, int ngram, boolean addData) {
 		List<Text> d = new ArrayList<Text>();
 		try {
@@ -82,16 +82,16 @@ public class Dataset {
 		}
 		return d;
 	}
-	
+
 	public Dataset(String fileName, String type, int ngram, String addDataType) {
 		System.out.print("reading dataset:" + fileName);
 		textList = new ArrayList<Text>();
-		if(type.equals("unlabel"))
+		if (type.equals("unlabel"))
 			textList = getTrainDataset("./data/" + fileName, ngram, 1);
 		if (type.equals("imdb"))
 			textList = getImdbDataset("./data/" + fileName, ngram, false);
-		
-		//some additional unlabeled data
+
+		// some additional unlabeled data
 		if (addDataType.contains("news")) {
 			String folder = "./data/unlabeled/news.txt";
 			List<Text> adtl = getTrainDataset(folder, ngram, Integer.parseInt(addDataType.split("news")[1]));
@@ -172,4 +172,3 @@ public class Dataset {
 	}
 
 }
-
