@@ -1,2 +1,16 @@
 # Neural-BoN
-code for AAAI-17 paper "Neural Bag-of-Ngrams"
+This code implements the Neural-BoN model proposed in AAAI-17 paper: [Bofang Li, Tao Liu, Zhe Zhao, Puwei Wang and Xiaoyong Du - **Neural Bag-of-Ngrams**].
+
+## Code
+This code has been tested on Windows, but it should work on Linux, OSX or any other operation system without any changes (Thanks to Java). 
+
+All parameters your may need to change are in the top lines of src/main/Main.java.
+
+Your can just specify the training corpus in the Main function of src/main/Main.java and run it. This will generate the learned n-gram representations in the results folder.
+
+## More Information
+
+This code is implemented upon the [DV-ngram code] (https://github.com/libofang/DV-ngram) of our ICLR 2016 workshop paper [Bofang Li, Tao Liu, Xiaoyong Du, Deyuan Zhang and Zhe Zhao - **Learning Document Embedding by Predicting N-grams for Sentiment Classification of Long Movie Reviews**] (http://arxiv.org/abs/1512.08183). We highly recommend you try that code for simpler generation of document vectors.
+
+Again, we thank Grégoire Mesnil et al. for their implementation of Paragraph Vector. Both their code and [iclr 2015 workshop paper](http://arxiv.org/abs/1412.5335) have influenced us a lot.
+
