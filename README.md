@@ -12,7 +12,7 @@ To train Neural-BoN on a labeled corpus, you can specify the corpus and implemen
 
 ## More Information
 
-This code is implemented upon the [DV-ngram code] (https://github.com/libofang/DV-ngram) of our ICLR 2016 workshop paper [Bofang Li, Tao Liu, Xiaoyong Du, Deyuan Zhang and Zhe Zhao - **Learning Document Embedding by Predicting N-grams for Sentiment Classification of Long Movie Reviews**] (http://arxiv.org/abs/1512.08183). We highly recommend you try that code for simpler generation of document vectors.
+This code is implemented upon the [DV-ngram code] (https://github.com/libofang/DV-ngram) of our ICLR 2016 workshop paper [Bofang Li, Tao Liu, Xiaoyong Du, Deyuan Zhang and Zhe Zhao - **Learning Document Embedding by Predicting N-grams for Sentiment Classification of Long Movie Reviews**] (http://arxiv.org/abs/1512.08183). We highly recommend you to try that code for simpler generation of document vectors.
 
 Again, we thank Grégoire Mesnil et al. for their implementation of Paragraph Vector. Both their code and [iclr 2015 workshop paper](http://arxiv.org/abs/1412.5335) have influenced us a lot.
 
